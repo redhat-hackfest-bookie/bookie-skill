@@ -34,4 +34,5 @@ The simulation API we are using supports 6 sports. These are as follows:
 
 ### Examples
 > _Alexa, ask my bookie who would win between Arizona and Seattle in the NFL?_
+
 > _Alexa, ask my bookie who would win between Vermont and VCU in the CBB?_
