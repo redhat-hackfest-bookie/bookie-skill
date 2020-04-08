@@ -1,0 +1,215 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "my bookie",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "TeamWinnerPredictionIntent",
+          "slots": [
+            {
+              "name": "team_a",
+              "type": "AMAZON.SportsTeam",
+              "samples": [
+                "it is {team_a}",
+                "the team is {team_a}",
+                "{team_a}"
+              ]
+            },
+            {
+              "name": "team_b",
+              "type": "AMAZON.SportsTeam",
+              "samples": [
+                "it is {team_b}",
+                "{team_b}",
+                "they are playing {team_b}"
+              ]
+            },
+            {
+              "name": "sport",
+              "type": "SupportedSport",
+              "samples": [
+                "the sport is {sport}",
+                "it is {sport}",
+                "{sport}"
+              ]
+            }
+          ],
+          "samples": [
+            "to predict between {team_a} and {team_b} in the {sport}",
+            "who would win between {team_a} and {team_b} in the {sport}",
+            "who would win between {team_a} and {team_b} in {sport}",
+            "to predict between {team_a} and {team_b} in {sport}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "mlb",
+              "name": {
+                "value": "mlb",
+                "synonyms": [
+                  "baseball",
+                  "Major League Baseball",
+                  "M. L. B.",
+                  "MLB"
+                ]
+              }
+            },
+            {
+              "id": "nhl",
+              "name": {
+                "value": "nhl",
+                "synonyms": [
+                  "National Hockey League",
+                  "N. H. L.",
+                  "NHL",
+                  "hockey"
+                ]
+              }
+            },
+            {
+              "id": "nba",
+              "name": {
+                "value": "nba",
+                "synonyms": [
+                  "National Basketball Association",
+                  "N. B. A.",
+                  "NBA"
+                ]
+              }
+            },
+            {
+              "id": "nfl",
+              "name": {
+                "value": "nfl",
+                "synonyms": [
+                  "National Football League",
+                  "N. F. L.",
+                  "NFL"
+                ]
+              }
+            },
+            {
+              "id": "cbb",
+              "name": {
+                "value": "cbb",
+                "synonyms": [
+                  "CBB",
+                  "College Basketball",
+                  "C. B. B."
+                ]
+              }
+            },
+            {
+              "id": "cfb",
+              "name": {
+                "value": "cfb",
+                "synonyms": [
+                  "CFB",
+                  "College Football",
+                  "C. F. B. "
+                ]
+              }
+            }
+          ],
+          "name": "SupportedSport"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "TeamWinnerPredictionIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "team_a",
+              "type": "AMAZON.SportsTeam",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.672897284051.964905323418"
+              }
+            },
+            {
+              "name": "team_b",
+              "type": "AMAZON.SportsTeam",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.672897284051.362184484893"
+              }
+            },
+            {
+              "name": "sport",
+              "type": "SupportedSport",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.984962161904.1229177628256"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.672897284051.964905323418",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what is the first {sport} team?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What is the first team?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.672897284051.362184484893",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "who is {team_a} against?"
+          },
+          {
+            "type": "PlainText",
+            "value": "what is the second {sport} team?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.984962161904.1229177628256",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what is the sport?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "10"
+}
