@@ -19,7 +19,7 @@ const TeamWinnerPredictionIntentHandler = {
     },
     
     async fetchPrediction(sport, teamA, teamB) {
-        const serviceUrl = `http://hackfest-alexa-bookie-alexa.apps.cluster-fed2.fed2.example.opentlc.com/api/v1/bookie/${sport}/${teamA}/${teamB}`;
+        const serviceUrl = `http://hackfest-alexa-bookie.alexa.apps.cluster-fed2.fed2.example.opentlc.com/api/v1/bookie/${sport}/${teamA}/${teamB}`;
         //const serviceUrl = `http://hackfest-alexa-bookie-alexa.apps.cluster-fed2.fed2.example.opentlc.com/api/v1/bookie/nfl/carolina/denver`;
         
         console.log(serviceUrl);
